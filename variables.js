@@ -7,7 +7,7 @@ function varExample() {
   }
   console.log(x); // Outputs 10
 }
-// varExample()
+varExample()
 
 
 function letExample() {
@@ -18,7 +18,7 @@ function letExample() {
     x = 20;
     console.log(x); // Outputs 20
   }
-  console.log(x); // Outputs 10
+  console.log(x); // Outputs 5
 }
 // letExample()
 
@@ -30,6 +30,6 @@ function constExample() {
     // x = 20;
     console.log(x); // Outputs 10
   }
-  console.log(x); // Outputs 10
+  console.log(x); // Outputs 5
 }
-constExample()
+// constExample()

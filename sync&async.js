@@ -1,12 +1,51 @@
 // Synchronous
 
-console.log('Task 1 completed.');
-console.log('Task 2 completed');
-console.log('Task 3 completed');
+function getUser() {
+    console.log('Fetching user...');
+    return 'User data';
+}
+
+function getPosts() {
+    console.log('Fetching posts...');
+    return 'Posts data';
+}
+
+function fetchDataSynchronously() {
+    const user = getUser();
+    const posts = getPosts();
+
+    console.log('User:', user);
+    console.log('Posts:', posts);
+}
+
+// fetchDataSynchronously();
+
 
 // Asynchronous 
-console.log('Task 1 completed');
-setTimeout(function () {
-    console.log('Task 2 completed');
-}, 1000);
-console.log('Task 3 completed');
+function getUserAsync(callback) {
+    console.log('Fetching user...');
+    setTimeout(() => {
+        callback('User data');
+    }, 1000);
+}
+
+function getPostsAsync(callback) {
+    console.log('Fetching posts...');
+    setTimeout(() => {
+        callback('Posts data');
+    }, 1000);
+}
+
+// Asynchronous code using callbacks
+function fetchDataAsynchronouslyWithCallbacks() {
+    getUserAsync((user) => {
+        getPostsAsync((posts) => {
+            console.log('User:', user);
+            console.log('Posts:', posts);
+        });
+    });
+}
+
+fetchDataAsynchronouslyWithCallbacks();
+
+
