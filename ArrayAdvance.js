@@ -44,7 +44,7 @@ console.log(hasPositiveNumber)//output:true
 
 //fill method
 const values = [3, -2, 7, -5, 1];
-const fillvalue = values.fill(5 * 121, 2, 3);
+const fillvalue = values.fill(5 , 2, 3);
 console.log(fillvalue)
 
 

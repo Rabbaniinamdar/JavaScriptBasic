@@ -65,3 +65,5 @@ animal.toString(); // name: myDog, color: yellow
 
 var cat = new Cat('catch')
 cat.toString();
+
+const mySymbol = Symbol('description');

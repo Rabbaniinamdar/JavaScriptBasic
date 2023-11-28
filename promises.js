@@ -26,4 +26,7 @@ readFile('file1.txt')
     })
     .catch(function (error) {
         console.error(error);
+    })
+    .finally(() => {
+        console.log(`it must execut no matter success or fail`);
     });
