@@ -1,24 +1,24 @@
 
-function readFile(filename, callback) {
+function readFile(filename, time, callback) {
     setTimeout(() => {
         const fileContent = `Content of ${filename}`;
         callback(fileContent);
-    }, 1000);
+    }, time);
 }
 
 function displayfileData(data) {
     console.log(data);
 }
 
-readFile('file1.txt', displayfileData);
+readFile('file.txt', 1000, displayfileData);
 
 
 // Callback Hell
-readFile('file1.txt', function (content1) {
+readFile('file1.txt', 5000, function (content1) {
     console.log(content1);
-    readFile('file2.txt', function (content2) {
+    readFile('file2.txt', 2000, function (content2) {
         console.log(content2);
-        readFile('file3.txt', function (content3) {
+        readFile('file3.txt', 1000, function (content3) {
             console.log(content3);
         });
     });

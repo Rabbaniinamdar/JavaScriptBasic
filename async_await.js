@@ -16,7 +16,7 @@ async function readFilesSequentially() {
     try {
         const content1 = await readFile('file1.txt');
         console.log(content1);
-
+        
         const content2 = await readFile('file2.txt');
         console.log(content2);
 
