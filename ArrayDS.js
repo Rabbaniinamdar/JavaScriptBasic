@@ -12,7 +12,7 @@ class ArrayDS {
         if (this.arr.length === 0) {
             return undefined;
         }
-        const poppedElement = this.arr[this.arr.length - 1];
+        let poppedElement = this.arr[this.arr.length - 1];
         this.arr.length--;
         return poppedElement;
     }
@@ -29,7 +29,7 @@ class ArrayDS {
         if (this.arr.length === 0) {
             return undefined;
         }
-        const shiftedElement = this.arr[0];
+        let shiftedElement = this.arr[0];
 
         for (let i = 0; i < this.arr.length - 1; i++) {
             this.arr[i] = this.arr[i + 1];
@@ -39,21 +39,48 @@ class ArrayDS {
 
         return shiftedElement;
     }
+    sort() {
+        for (let i in this.arr) {
+            for (let j in this.arr) {
+                if (this.arr[i] < this.arr[j]) {
+                    let temp = this.arr[i];
+                    this.arr[i] = this.arr[j];
+                    this.arr[j] = temp;
+                }
+            }
+        }
+        return this.arr
+    }
+    reverse() {
+        for (let i in this.arr) {
+            for (let j in this.arr) {
+                if (this.arr[i] > this.arr[j]) {
+                    let temp = this.arr[i];
+                    this.arr[i] = this.arr[j];
+                    this.arr[j] = temp;
+                }
+            }
+        }
+        return this.arr
+    }
 }
 
 // Example usage
-const arrManipulator = new ArrayDS([]);
+let arrManipulator = new ArrayDS([]);
+arrManipulator.push(40);
 arrManipulator.push(10);
 arrManipulator.push(20);
 arrManipulator.push(30);
 
-console.log(arrManipulator.arr); 
+console.log(arrManipulator.sort());
 
-arrManipulator.pop();
-console.log(arrManipulator.arr);
+console.log(arrManipulator.reverse());
 
-arrManipulator.unshift(5);
-console.log(arrManipulator.arr);
+// arrManipulator.pop();
+// console.log(arrManipulator.arr);
 
-arrManipulator.shift();
-console.log(arrManipulator.arr);
+// arrManipulator.unshift(5);
+// console.log(arrManipulator.arr);
+
+// arrManipulator.shift();
+// console.log(arrManipulator.arr);
