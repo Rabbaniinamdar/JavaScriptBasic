@@ -50,3 +50,26 @@ function isPrime(num) {
     return true;
 }
 console.log(isPrime(7))
+
+function findLargest() {
+    let larget = arr[0];
+    arr.forEach((ele) => {
+        if (larget < ele) {
+            larget = ele;
+        }
+    })
+    return larget
+}
+// console.log(findLargest())
+
+
+function findSmallest() {
+    let smallest = arr[0];
+    arr.forEach((ele) => {
+        if (smallest < ele) {
+            smallest = ele;
+        }
+    })
+    return smallest
+}
+console.log(findSmallest())
